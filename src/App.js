@@ -1,3 +1,5 @@
+import warningIcon from './assets/images/icon-error.svg';
+import arrowIcon from './assets/images/icon-arrow.svg';
 import heroImgMobile from './assets/images/hero-mobile.jpg';
 import heroImgDesktop from './assets/images/hero-desktop.jpg';
 import './App.css';
@@ -21,9 +23,15 @@ function App() {
         </p>
       </div>
       <form>
-        <label htmlFor="email">email</label>
-        <input type="email"></input>
-        <button type="submit">submit</button>
+        <div>
+          <label htmlFor="email">email</label>
+          <input type="email"></input>
+          <img src={warningIcon} alt="warning icon"></img>
+          <p>Please provide a valid email</p>
+        </div>
+        <button type="submit">
+          <img src={arrowIcon} alt="arrow icon "></img>
+        </button>
       </form>
     </div>
   );
