@@ -1,55 +1,97 @@
 .form-wrapper {
   display: block;
-  position: relative;
   padding-inline: 2rem;
-  z-index: 1;
   text-align: center;
+  position: relative;
 }
 
 .form-wrapper > div {
+  position: relative;
 }
 
 .form-wrapper > div > input {
-  background-color: rgb(var(--clr-pale-red), 0.001);
-  border: 1px solid rgb(var(--clr-Dark-Grayish-Red), 0.2);
+  border: 0;
+  background-color: rgb(252, 240, 239);
+  outline: 1px solid rgb(var(--clr-Dark-Grayish-Red), 0.2);
   padding-block: 0.95rem;
   padding-inline: 1.5rem;
   border-radius: 30px;
   width: 100%;
+  transition: 0.25s;
+  color: rgb(var(--clr-Dark-Grayish-Red), 0.8);
 }
 
 .form-wrapper > div > input::placeholder {
   font-size: 0.81rem;
   letter-spacing: 0.04rem;
-  color: rgb(var(--clr-Dark-Grayish-Red), 0.2);
+  color: rgb(var(--clr-Dark-Grayish-Red), 0.35);
+}
+
+.form-wrapper > div > input:focus-visible {
+  outline-color: rgb(var(--clr-desaturated-red), 0.8);
+}
+
+.form-wrapper > div > input:hover {
+  outline-color: rgb(var(--clr-desaturated-red), 0.8);
+}
+
+.form-wrapper > div > input:user-valid {
 }
 
 .form-wrapper > div > img {
-  background-color: aqua;
+  max-width: 18px;
   position: absolute;
-  top: 0;
-  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 4.2rem;
 }
 
 .form-wrapper > div > p {
   position: absolute;
-  z-index: -1;
-  background-color: aquamarine;
-  display: none;
+  z-index: -10;
+  top: 3rem;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+
+  color: rgb(var(--clr-desaturated-red), 1);
+  font-weight: 700;
+  font-size: 0.625rem;
 }
 
 /* Button */
 .form-wrapper > button {
+  position: absolute;
   cursor: pointer;
   border: 0;
-  background: linear-gradient(135deg, rgb(248, 191, 191), rgb(237, 140, 140));
-  position: absolute;
   top: 50%;
+  background: linear-gradient(135deg, rgb(248, 191, 191), rgb(237, 140, 140));
   transform: translate(0, -50%);
   right: 30px;
   width: fit-content;
   padding-block: 0.9rem;
   padding-inline: 1.6rem;
   border-radius: 45px;
-  box-shadow: 0px 10px 20px 0px rgb(var(--clr-desaturated-red), 0.5);
+  box-shadow: 0px 10px 20px 0px rgb(var(--clr-desaturated-red), 0.8);
+  transition: 0.3s;
+}
+
+/* https://keithjgrant.com/posts/2017/07/transitioning-gradients/ */
+
+.form-wrapper > button::before {
+  position: absolute;
+  content: '';
+  border-radius: 45px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgb(247, 232, 232), rgb(234, 157, 157));
+  z-index: -1;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.form-wrapper > button:hover::before {
+  opacity: 1;
 }
