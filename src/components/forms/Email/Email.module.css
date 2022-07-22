@@ -47,16 +47,22 @@
   margin-left: 4.2rem;
 }
 
-.form-wrapper > div > p {
+.form-warning {
   position: absolute;
   z-index: -10;
-  top: 3rem;
+  top: 0;
   padding-left: 1.5rem;
   padding-top: 0.5rem;
 
   color: rgb(var(--clr-desaturated-red), 1);
   font-weight: 700;
   font-size: 0.625rem;
+  transition: top 0.4s;
+}
+
+.active {
+  top: 3rem;
+  transition: top 0.4s;
 }
 
 /* Button */
