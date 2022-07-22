@@ -32,7 +32,7 @@
 }
 .statement-wrapper > div:first-child span {
   font-weight: 600;
-  color: black;
+  color: rgb(52, 52, 52);
 }
 
 .statement-wrapper > div:last-child {
@@ -41,5 +41,5 @@
   line-height: 1.6;
   font-size: 0.86rem;
   font-weight: 600;
-  padding-bottom: 1.87rem;
+  padding-bottom: 2.1rem;
 }
