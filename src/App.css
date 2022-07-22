@@ -1,0 +1,41 @@
+.App {
+  background-color: rgb(232, 226, 238);
+  min-height: 100vh;
+}
+
+.logo-wrapper {
+  padding: 2rem;
+}
+
+.logo-wrapper > img {
+  width: 32.2%;
+}
+
+.statement-wrapper {
+  padding-inline: 2rem;
+  padding-top: 4rem;
+}
+
+.statement-wrapper > div:first-child {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.71rem;
+  color: var(--clr-desaturated-red);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.04;
+  padding-bottom: 1rem;
+}
+.statement-wrapper > div:first-child span {
+  font-weight: 600;
+  color: black;
+}
+
+.statement-wrapper > div:last-child {
+  text-align: center;
+  color: var(--clr-desaturated-red);
+  line-height: 1.6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding-bottom: 1.9rem;
+}
