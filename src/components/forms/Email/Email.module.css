@@ -1,0 +1,35 @@
+.form-wrapper {
+  position: relative;
+  padding-inline: 2.6rem;
+  z-index: 1;
+  background-color: rebeccapurple;
+  text-align: center;
+}
+
+.form-wrapper > div {
+  width: 100%;
+}
+
+.form-wrapper > div > input {
+  border: 0;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.form-wrapper > div > img {
+  background-color: aqua;
+  position: absolute;
+  bottom: 1px;
+}
+
+.form-wrapper > div > p {
+  position: absolute;
+  z-index: -1;
+  background-color: aquamarine;
+}
+
+/* Button */
+.form-wrapper button {
+  position: absolute;
+}
