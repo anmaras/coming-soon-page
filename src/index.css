@@ -6,12 +6,14 @@
   /* Colors */
 
   /* Primary */
-  --clr-desaturated-red: rgb(206, 151, 151);
-  --clr-Soft-Red: rgb(249, 98, 98);
+  --clr-desaturated-red: 206, 151, 151;
+  --clr-Soft-Red: 249, 98, 98;
   /* Neutral */
-  --clr-Dark-Grayish-Red: rgb(65, 58, 58);
+  --clr-Dark-Grayish-Red: 65, 58, 58;
 
   /* Gradient */
+  --clr-pale-red: 248, 191, 191;
+  --clr-strong-red: 237, 140, 140;
 }
 
 /* ------------------- */

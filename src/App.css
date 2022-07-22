@@ -1,6 +1,10 @@
 .App {
-  background-color: rgb(232, 226, 238);
   min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--clr-pale-red), 0.1),
+    rgb(var(--clr-strong-red), 0.2)
+  );
 }
 
 .logo-wrapper {
@@ -20,11 +24,11 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.71rem;
-  color: var(--clr-desaturated-red);
+  color: rgb(var(--clr-desaturated-red));
   font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.04;
-  padding-bottom: 1rem;
+  padding-bottom: 1.1rem;
 }
 .statement-wrapper > div:first-child span {
   font-weight: 600;
@@ -33,9 +37,9 @@
 
 .statement-wrapper > div:last-child {
   text-align: center;
-  color: var(--clr-desaturated-red);
+  color: rgb(var(--clr-desaturated-red));
   line-height: 1.6;
-  font-size: 0.875rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  padding-bottom: 1.9rem;
+  padding-bottom: 1.87rem;
 }
