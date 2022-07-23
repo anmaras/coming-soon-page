@@ -29,18 +29,30 @@ class Email extends Component {
   };
 
   onSubmit = (e) => {
-    e.preventDefault();
-    if (!this.state.emailInput) {
+    if (!this.state.emailInput || !this.validateEmail(this.state.emailInput)) {
+      e.preventDefault();
       this.setState({
         isValid: false,
       });
     }
   };
 
+  validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   render() {
     const warningClass = this.state.isValid
       ? style[`form-warning`]
       : `${style['form-warning']} ${style.active}`;
+
+    const iconClass = this.state.isValid
+      ? style['warning-icon']
+      : `${style['warning-icon']} ${style['icon-visible']}`;
 
     return (
       <form
@@ -56,7 +68,7 @@ class Email extends Component {
             value={this.state.emailInput}
             onChange={this.inputValueHandler}
           ></input>
-          <img src={warningIcon} alt="warning icon"></img>
+          <img className={iconClass} src={warningIcon} alt="warning icon"></img>
           <p className={warningClass}>Please provide a valid email</p>
         </div>
         <button type="submit">
