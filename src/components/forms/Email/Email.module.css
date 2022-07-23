@@ -19,6 +19,7 @@
   width: 100%;
   transition: 0.25s;
   color: rgb(var(--clr-Dark-Grayish-Red), 0.8);
+  font-size: 0.83rem;
 }
 
 .form-wrapper > div > input::placeholder {
@@ -38,13 +39,19 @@
 .form-wrapper > div > input:user-valid {
 }
 
-.form-wrapper > div > img {
+.warning-icon {
   max-width: 18px;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: 4.2rem;
+  left: 70%;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.icon-visible {
+  transition: opacity 0.6s ease;
+  opacity: 1;
 }
 
 .form-warning {
@@ -57,12 +64,14 @@
   color: rgb(var(--clr-desaturated-red), 1);
   font-weight: 700;
   font-size: 0.625rem;
-  transition: top 0.4s;
+
+  transition: 0.4s;
 }
 
 .active {
-  top: 3rem;
-  transition: top 0.4s;
+  /* top: 3rem; */
+  transform: translateY(3rem);
+  transition: 0.4s;
 }
 
 /* Button */
@@ -80,6 +89,10 @@
   border-radius: 45px;
   box-shadow: 0px 10px 20px 0px rgb(var(--clr-desaturated-red), 0.8);
   transition: 0.3s;
+}
+
+.form-wrapper > button:focus {
+  outline: 0;
 }
 
 /* https://keithjgrant.com/posts/2017/07/transitioning-gradients/ */
@@ -100,4 +113,50 @@
 
 .form-wrapper > button:hover::before {
   opacity: 1;
+}
+
+@media (min-width: 1440px) {
+  .form-wrapper {
+    grid-row: 3/4;
+    padding-inline: 10.4rem;
+    width: 93%;
+
+    bottom: 75px;
+  }
+
+  .form-wrapper > div > input {
+    font-size: 1rem;
+    padding-block: 1.2rem;
+  }
+
+  .form-wrapper > button {
+    right: 10.2rem;
+    top: 27px;
+    padding-block: 1.1rem;
+    padding-inline: 3rem;
+  }
+
+  .form-warning {
+    font-size: 0.83rem;
+  }
+
+  .active {
+    transform: translateY(3.5rem);
+    transition: 0.4s;
+  }
+
+  .warning-icon {
+    max-width: 24px;
+    position: absolute;
+    top: 50%;
+    left: 69%;
+    transform: translate(0, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .icon-visible {
+    transition: opacity 0.6s ease;
+    opacity: 1;
+  }
 }
